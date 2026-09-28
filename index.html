@@ -7,35 +7,180 @@
 
 <style>
 *{box-sizing:border-box;margin:0;padding:0;font-family:Arial,sans-serif}
-body{background:#eef5ff;color:#111}
-header{background:linear-gradient(135deg,#0066ff,#002b70);color:white;text-align:center;padding:28px 15px}
+
+body{
+background:#eef5ff;
+color:#111;
+}
+
+header{
+background:linear-gradient(135deg,#0066ff,#002b70);
+color:white;
+text-align:center;
+padding:28px 15px;
+}
+
 header h1{font-size:26px}
 header h2{margin:6px 0}
-.container{max-width:760px;margin:auto;padding:15px}
-.card{background:white;margin:15px 0;padding:20px;border-radius:18px;box-shadow:0 4px 15px #0002}
-.title{text-align:center;color:#0057d9;margin-bottom:18px}
-.info{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.info div{background:#f0f5ff;padding:15px;border-radius:12px;line-height:1.5}
-input,select{width:100%;padding:13px;margin:7px 0;border:1px solid #bbb;border-radius:9px;font-size:16px}
-button{width:100%;padding:13px;border:0;border-radius:9px;color:white;font-size:16px;margin-top:10px;cursor:pointer;background:#0875ff}
-.login{background:#6c42f5}.logout{background:#555}.update{background:#ff9800}
-.finish{background:#18a558}.delete{background:#e53935}.cash{background:#009688}
-.match{border:2px solid #0875ff;border-radius:16px;padding:18px;margin-top:15px;text-align:center}
-.teams{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:bold}
-.vs{background:#0875ff;color:white;border-radius:50%;min-width:45px;height:45px;display:flex;align-items:center;justify-content:center}
-.score{font-size:32px;font-weight:bold;color:#0057d9;margin:15px 0}
-.status{display:inline-block;padding:6px 12px;border-radius:20px;color:white;font-size:12px}
-.round{background:#0057d9;margin-bottom:10px}
-.matchInfo{margin-top:12px;color:#555;line-height:1.7}
-.empty{text-align:center;color:#777;padding:15px}
-.adminPanel{display:none}
-.adminBox{background:#fff8e1;border:1px solid #ffd54f;padding:15px;border-radius:10px}
-.player{background:#f7f7f7;border:1px solid #ddd;padding:12px;border-radius:10px;margin-top:10px}
-.qr{text-align:center}
-.qr img{width:260px;max-width:100%;margin:15px auto;display:block}
-.small{font-size:13px;color:#777}
-footer{background:#002b70;color:white;text-align:center;padding:22px;margin-top:20px}
-@media(max-width:500px){.info{grid-template-columns:1fr}.teams{font-size:14px}}
+
+.container{
+max-width:760px;
+margin:auto;
+padding:15px;
+}
+
+.card{
+background:white;
+margin:15px 0;
+padding:20px;
+border-radius:18px;
+box-shadow:0 4px 15px #0002;
+}
+
+.title{
+text-align:center;
+color:#0057d9;
+margin-bottom:18px;
+}
+
+.info{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+}
+
+.info div{
+background:#f0f5ff;
+padding:15px;
+border-radius:12px;
+line-height:1.5;
+}
+
+input,select{
+width:100%;
+padding:13px;
+margin:7px 0;
+border:1px solid #bbb;
+border-radius:9px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:13px;
+border:0;
+border-radius:9px;
+color:white;
+font-size:16px;
+margin-top:10px;
+cursor:pointer;
+background:#0875ff;
+}
+
+.login{background:#6c42f5}
+.logout{background:#555}
+.update{background:#ff9800}
+.finish{background:#18a558}
+.delete{background:#e53935}
+
+.match{
+border:2px solid #0875ff;
+border-radius:16px;
+padding:18px;
+margin-top:15px;
+text-align:center;
+}
+
+.teams{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:8px;
+font-weight:bold;
+}
+
+.vs{
+background:#0875ff;
+color:white;
+border-radius:50%;
+min-width:45px;
+height:45px;
+display:flex;
+align-items:center;
+justify-content:center;
+}
+
+.score{
+font-size:32px;
+font-weight:bold;
+color:#0057d9;
+margin:15px 0;
+}
+
+.status,.round{
+display:inline-block;
+padding:6px 12px;
+border-radius:20px;
+color:white;
+font-size:12px;
+}
+
+.round{
+background:#0057d9;
+margin-bottom:10px;
+}
+
+.matchInfo{
+margin-top:12px;
+color:#555;
+line-height:1.7;
+}
+
+.empty{
+text-align:center;
+color:#777;
+padding:15px;
+}
+
+.adminPanel{
+display:none;
+}
+
+.adminBox{
+background:#fff8e1;
+border:1px solid #ffd54f;
+padding:15px;
+border-radius:10px;
+}
+
+.qr{
+text-align:center;
+}
+
+.qr img{
+width:260px;
+max-width:100%;
+margin:15px auto;
+display:block;
+}
+
+.small{
+font-size:13px;
+color:#777;
+}
+
+footer{
+background:#002b70;
+color:white;
+text-align:center;
+padding:22px;
+margin-top:20px;
+}
+
+@media(max-width:500px){
+.info{grid-template-columns:1fr}
+.teams{font-size:14px}
+}
 </style>
 </head>
 
@@ -50,163 +195,302 @@ footer{background:#002b70;color:white;text-align:center;padding:22px;margin-top:
 
 <div class="container">
 
+<!-- TOURNAMENT DETAILS -->
+
 <div class="card">
 <h2 class="title">🏆 Tournament Details</h2>
+
 <div class="info">
-<div>📍 <b>Venue</b><br>Habang Umsaphow Playground</div>
-<div>📅 <b>Start</b><br>7 October 2026</div>
-<div>💰 <b>Joining Fee</b><br>₹1800</div>
-<div>🏆 <b>Winner</b><br>₹30,000 + Trophy</div>
-<div>🥈 <b>Runner Up</b><br>₹14,000 + Trophy</div>
-<div>⏰ <b>Last Date</b><br>4 October 2026</div>
+
+<div>
+📍 <b>Venue</b><br>
+Habang Umsaphow Playground
+</div>
+
+<div>
+📅 <b>Start</b><br>
+7 October 2026
+</div>
+
+<div>
+💰 <b>Joining Fee</b><br>
+₹1800
+</div>
+
+<div>
+🏆 <b>Winner</b><br>
+₹30,000 + Trophy
+</div>
+
+<div>
+🥈 <b>Runner Up</b><br>
+₹14,000 + Trophy
+</div>
+
+<div>
+⏰ <b>Last Date</b><br>
+4 October 2026
+</div>
+
 </div>
 </div>
+
 
 <!-- LIVE -->
+
 <div class="card">
 <h2 class="title">🟢 LIVE MATCHES</h2>
-<div id="live"><div class="empty">No live match.</div></div>
+<div id="live">
+<div class="empty">No live match.</div>
 </div>
+</div>
+
 
 <!-- UPCOMING -->
+
 <div class="card">
 <h2 class="title">📅 UPCOMING MATCHES</h2>
-<div id="upcoming"><div class="empty">No upcoming match.</div></div>
+<div id="upcoming">
+<div class="empty">No upcoming match.</div>
 </div>
+</div>
+
 
 <!-- FINISHED -->
+
 <div class="card">
 <h2 class="title">🏁 FINISHED MATCHES</h2>
-<div id="finished"><div class="empty">No finished match.</div></div>
+<div id="finished">
+<div class="empty">No finished match.</div>
+</div>
 </div>
 
-
-<!-- DEATH PLAYERS -->
-<div class="card">
-<h2 class="title">👤 DEATH PLAYERS</h2>
-<p class="small">Maximum 3 Death Players per team.</p>
-<div id="players"><div class="empty">No players registered.</div></div>
-</div>
 
 <!-- ADMIN LOGIN -->
+
 <div class="card">
+
 <h2 class="title">👑 ADMIN LOGIN</h2>
 
 <div id="loginBox">
-<input id="email" type="email" placeholder="Admin Email">
-<input id="password" type="password" placeholder="Password">
-<button class="login" onclick="loginAdmin()">🔐 Login</button>
+
+<input
+id="email"
+type="email"
+placeholder="Admin Email"
+>
+
+<input
+id="password"
+type="password"
+placeholder="Password"
+>
+
+<button
+class="login"
+onclick="loginAdmin()">
+🔐 LOGIN
+</button>
+
 </div>
+
 
 <div id="loggedIn" style="display:none">
+
 <div class="adminBox">
+
 <b>✅ Admin Logged In</b>
-<p id="adminEmail" class="small"></p>
-</div>
-<button class="logout" onclick="logoutAdmin()">🚪 Logout</button>
-</div>
+
+<p
+id="adminEmail"
+class="small">
+</p>
+
 </div>
 
+<button
+class="logout"
+onclick="logoutAdmin()">
+🚪 LOGOUT
+</button>
+
+</div>
+
+</div>
+
+
 <!-- ADMIN PANEL -->
-<div class="card adminPanel" id="adminPanel">
+
+<div
+class="card adminPanel"
+id="adminPanel">
 
 <h2 class="title">⚙️ ADMIN CONTROL</h2>
 
-<h3>➕ Add Match</h3>
 
-<input id="team1" placeholder="Team 1">
-<input id="team2" placeholder="Team 2">
+<h3>➕ ADD MATCH</h3>
+
+<input
+id="team1"
+placeholder="Team 1"
+>
+
+<input
+id="team2"
+placeholder="Team 2"
+>
 
 
+<!-- ROUND -->
+
+<select id="round">
+
+<option value="QUARTER FINAL">
+Quarter Final
+</option>
+
+<option value="SEMI FINAL">
+Semi Final
+</option>
+
+<option value="FINAL">
+Final
+</option>
+
+</select>
+
+
+<!-- STATUS -->
 
 <select id="status">
-<option value="UPCOMING">Upcoming</option>
-<option value="LIVE">Live</option>
+
+<option value="UPCOMING">
+Upcoming
+</option>
+
+<option value="LIVE">
+Live
+</option>
+
 </select>
 
-<input id="date" type="date">
-<input id="time" type="time">
-<input id="venue" value="Habang Umsaphow Playground">
 
-<button onclick="addMatch()">➕ ADD MATCH</button>
+<input
+id="date"
+type="date"
+>
 
-<hr style="margin:20px 0">
+<input
+id="time"
+type="time"
+>
 
-<h3>👤 Add Death Player</h3>
+<input
+id="venue"
+value="Habang Umsaphow Playground"
+>
 
-<input id="playerTeam" placeholder="Team Name">
-<input id="playerName" placeholder="Player Name">
-
-<select id="slot">
-<option value="1">Death Player 1</option>
-<option value="2">Death Player 2</option>
-<option value="3">Death Player 3</option>
-</select>
-
-<input id="amount" type="number" placeholder="Payment Amount">
-
-<select id="payment">
-<option value="ONLINE">Online Payment</option>
-<option value="CASH">Cash Payment</option>
-</select>
-
-<button class="cash" onclick="addPlayer()">
-💾 SAVE DEATH PLAYER
+<button onclick="addMatch()">
+➕ ADD MATCH
 </button>
 
+
 <hr style="margin:20px 0">
 
-<h3>⚽ Add Team</h3>
 
-<input id="newTeam" placeholder="Team Name">
-<button onclick="addTeam()">💾 SAVE TEAM</button>
+<!-- ADD TEAM -->
+
+<h3>⚽ ADD TEAM</h3>
+
+<input
+id="newTeam"
+placeholder="Team Name"
+>
+
+<button onclick="addTeam()">
+💾 SAVE TEAM
+</button>
 
 <div id="teamList"></div>
 
 </div>
 
-<!-- PAYMENT QR -->
-<div class="card">
-<h2 class="title">💳 DEATH PLAYER PAYMENT</h2>
-<div class="qr">
-<p>Scan your payment QR.</p>
 
-<!-- PUT YOUR OWN PAYMENT QR IMAGE URL HERE -->
+<!-- PAYMENT QR -->
+
+<div class="card">
+
+<h2 class="title">
+💳 PAYMENT QR
+</h2>
+
+<div class="qr">
+
+<p>
+Scan your payment QR.
+</p>
+
+<!-- YAHAN APNA PAYMENT QR IMAGE URL LAGANA -->
+
 <img
 src="YOUR_PAYMENT_QR_IMAGE_URL_HERE"
 alt="Payment QR"
 >
 
 <p class="small">
-Online payment is shown here. Cash payment can only be marked by admin.
+Online payment QR
 </p>
+
 </div>
+
 </div>
+
 
 <!-- WEBSITE QR -->
+
 <div class="card">
-<h2 class="title">📱 WEBSITE QR</h2>
+
+<h2 class="title">
+📱 WEBSITE QR
+</h2>
 
 <div class="qr">
-<p>Scan this QR to open this exact website.</p>
 
-<img id="websiteQR" alt="Website QR Code">
+<p>
+Scan this QR to open this website.
+</p>
+
+<img
+id="websiteQR"
+alt="Website QR Code"
+>
 
 <p class="small">
-This QR automatically uses the current page URL.
+This QR automatically uses the current website URL.
 </p>
-</div>
+
 </div>
 
+</div>
+
+
+<!-- CONTACT -->
+
 <div class="card">
-<h2 class="title">📞 CONTACT</h2>
+
+<h2 class="title">
+📞 CONTACT
+</h2>
+
 <p>7005585054</p>
 <p>6009409650</p>
 <p>8099622204</p>
 <p>8638867462</p>
+
 </div>
 
 </div>
+
 
 <footer>
 © 2026 Umsaphow Football Tournament
@@ -227,8 +511,7 @@ deleteDoc,
 doc,
 query,
 orderBy,
-onSnapshot,
-getDocs
+onSnapshot
 }
 from "https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js";
 
@@ -246,38 +529,71 @@ from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
 ========================= */
 
 const firebaseConfig = {
-  apiKey: "AIzaSyAgnA_vcQQBXVmH43DEYux-h6pPLROfMhk",
-  authDomain: "umsaphow-fooball-tournment.firebaseapp.com",
-  projectId: "umsaphow-fooball-tournment",
-  storageBucket: "umsaphow-fooball-tournment.firebasestorage.app",
-  messagingSenderId: "613133219437",
-  appId: "1:613133219437:web:ce06162269bf5feb6ef164"
+
+apiKey:
+"AIzaSyAgnA_vcQQBXVmH43DEYux-h6pPLROfMhk",
+
+authDomain:
+"umsaphow-fooball-tournment.firebaseapp.com",
+
+projectId:
+"umsaphow-fooball-tournment",
+
+storageBucket:
+"umsaphow-fooball-tournment.firebasestorage.app",
+
+messagingSenderId:
+"613133219437",
+
+appId:
+"1:613133219437:web:ce06162269bf5feb6ef164"
+
 };
 
-const app=initializeApp(firebaseConfig);
-const db=getFirestore(app);
-const auth=getAuth(app);const ADMIN_UIDS = [
-  "3Xp0q1iMDHTYEOGWyLpypFJtNlh2",
-  "YBn6dMABtsSRFsyeuttF9k7wmxm2",
-  "SatQR0NXliOkcEir3ZfzjUENPpq2",
-  "6v4hXzj2e2fQwATEYx5vd1Tm0cE3"
-];
 
-function isAdmin() {
-  return auth.currentUser &&
-         ADMIN_UIDS.includes(auth.currentUser.uid);
-   }
+const app=initializeApp(firebaseConfig);
+
+const db=getFirestore(app);
+
+const auth=getAuth(app);
 
 
 /* =========================
-   NEW AUTOMATIC QR
+   ADMIN UID
+========================= */
+
+const ADMIN_UIDS=[
+
+"3Xp0q1iMDHTYEOGWyLpypFJtNlh2",
+
+"YBn6dMABtsSRFsyeuttF9k7wmxm2",
+
+"SatQR0NXliOkcEir3ZfzjUENPpq2",
+
+"6v4hXzj2e2fQwATEYx5vd1Tm0cE3"
+
+];
+
+
+function isAdmin(){
+
+return auth.currentUser &&
+ADMIN_UIDS.includes(auth.currentUser.uid);
+
+}
+
+
+/* =========================
+   WEBSITE QR
 ========================= */
 
 const currentURL=window.location.href;
 
 document.getElementById("websiteQR").src=
+
 "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="
-+encodeURIComponent(currentURL);
++
+encodeURIComponent(currentURL);
 
 
 /* =========================
@@ -286,23 +602,46 @@ document.getElementById("websiteQR").src=
 
 window.loginAdmin=async()=>{
 
-const email=document.getElementById("email").value.trim();
-const password=document.getElementById("password").value;
+const email=
+document.getElementById("email").value.trim();
 
-if(!email||!password){
+const password=
+document.getElementById("password").value;
+
+
+if(!email || !password){
+
 alert("Enter email and password.");
+
 return;
+
 }
+
 
 try{
 
-await signInWithEmailAndPassword(auth,email,password);
+await signInWithEmailAndPassword(
+auth,
+email,
+password
+);
+
 alert("Admin login successful.");
 
 }catch(error){
 
 console.error(error);
-alert("Login failed: " + error.code + "\n" + error.message);
+
+alert(
+"Login failed: "
++
+error.code
++
+"\n"
++
+error.message
+);
+
 }
 
 };
@@ -313,7 +652,9 @@ alert("Login failed: " + error.code + "\n" + error.message);
 ========================= */
 
 window.logoutAdmin=async()=>{
+
 await signOut(auth);
+
 };
 
 
@@ -323,20 +664,31 @@ await signOut(auth);
 
 onAuthStateChanged(auth,user=>{
 
-const panel=document.getElementById("adminPanel");
+const panel=
+document.getElementById("adminPanel");
+
 
 if(user){
 
-document.getElementById("loginBox").style.display="none";
-document.getElementById("loggedIn").style.display="block";
+document.getElementById("loginBox")
+.style.display="none";
+
+document.getElementById("loggedIn")
+.style.display="block";
+
 panel.style.display="block";
 
-document.getElementById("adminEmail").textContent=user.email;
+document.getElementById("adminEmail")
+.textContent=user.email;
 
 }else{
 
-document.getElementById("loginBox").style.display="block";
-document.getElementById("loggedIn").style.display="none";
+document.getElementById("loginBox")
+.style.display="block";
+
+document.getElementById("loggedIn")
+.style.display="none";
+
 panel.style.display="none";
 
 }
@@ -353,37 +705,106 @@ renderMatches();
 window.addMatch=async()=>{
 
 if(!isAdmin()){
-  alert("Only admin can add matches.");
-  return;
-   }
 
-const team1=document.getElementById("team1").value.trim();
-const team2=document.getElementById("team2").value.trim();
+alert("Only admin can add matches.");
 
-const status=document.getElementById("status").value;
-const date=document.getElementById("date").value;
-const time=document.getElementById("time").value;
-const venue=document.getElementById("venue").value.trim();
-
-if(!team1||!team2||!date||!time){
-alert("Please fill all match details.");
 return;
+
 }
 
-await addDoc(collection(db,"matches"),{
 
+const team1=
+document.getElementById("team1")
+.value.trim();
+
+const team2=
+document.getElementById("team2")
+.value.trim();
+
+const round=
+document.getElementById("round")
+.value;
+
+const status=
+document.getElementById("status")
+.value;
+
+const date=
+document.getElementById("date")
+.value;
+
+const time=
+document.getElementById("time")
+.value;
+
+const venue=
+document.getElementById("venue")
+.value.trim();
+
+
+if(!team1 ||
+!team2 ||
+!date ||
+!time){
+
+alert("Please fill all match details.");
+
+return;
+
+}
+
+
+try{
+
+await addDoc(
+collection(db,"matches"),
+{
+
+team1:team1,
+
+team2:team2,
+
+round:round,
+
+status:status,
 
 score1:0,
+
 score2:0,
+
 winner:"",
-date,
-time,
-venue,
+
+date:date,
+
+time:time,
+
+venue:venue,
+
 createdAt:Date.now()
 
-});
+}
+);
+
+
+document.getElementById("team1").value="";
+document.getElementById("team2").value="";
+document.getElementById("date").value="";
+document.getElementById("time").value="";
+
 
 alert("Match added successfully.");
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Match add failed: "
++
+error.message
+);
+
+}
 
 };
 
@@ -394,50 +815,113 @@ alert("Match added successfully.");
 
 let unsubscribeMatches=null;
 
+
 function renderMatches(){
 
-if(unsubscribeMatches)unsubscribeMatches();
+if(unsubscribeMatches){
+
+unsubscribeMatches();
+
+}
+
 
 const q=query(
+
 collection(db,"matches"),
+
 orderBy("createdAt","asc")
+
 );
 
-unsubscribeMatches=onSnapshot(q,snapshot=>{
 
-const live=document.getElementById("live");
-const upcoming=document.getElementById("upcoming");
-const finished=document.getElementById("finished");
+unsubscribeMatches=
+onSnapshot(q,snapshot=>{
+
+
+const live=
+document.getElementById("live");
+
+const upcoming=
+document.getElementById("upcoming");
+
+const finished=
+document.getElementById("finished");
+
 
 live.innerHTML="";
+
 upcoming.innerHTML="";
+
 finished.innerHTML="";
 
-let l=0,u=0,f=0;
+
+let l=0;
+
+let u=0;
+
+let f=0;
+
 
 snapshot.forEach(item=>{
 
 const d=item.data();
+
 const id=item.id;
 
-const card=createMatchCard(d,id);
+const card=
+createMatchCard(d,id);
+
 
 if(d.status==="LIVE"){
+
 live.appendChild(card);
+
 l++;
-}else if(d.status==="FINISHED"){
-finished.appendChild(card);
-f++;
-}else{
-upcoming.appendChild(card);
-u++;
+
 }
 
+else if(d.status==="FINISHED"){
+
+finished.appendChild(card);
+
+f++;
+
+}
+
+else{
+
+upcoming.appendChild(card);
+
+u++;
+
+}
+
+});
 
 
-if(!l)live.innerHTML='<div class="empty">No live match.</div>';
-if(!u)upcoming.innerHTML='<div class="empty">No upcoming match.</div>';
-if(!f)finished.innerHTML='<div class="empty">No finished match.</div>';
+if(!l)
+
+live.innerHTML=
+'<div class="empty">No live match.</div>';
+
+
+if(!u)
+
+upcoming.innerHTML=
+'<div class="empty">No upcoming match.</div>';
+
+
+if(!f)
+
+finished.innerHTML=
+'<div class="empty">No finished match.</div>';
+
+
+},error=>{
+
+console.error(error);
+
+});
 
 }
 
@@ -448,69 +932,144 @@ if(!f)finished.innerHTML='<div class="empty">No finished match.</div>';
 
 function createMatchCard(d,id){
 
-const div=document.createElement("div");
+const div=
+document.createElement("div");
+
 div.className="match";
+
 
 let color="#0875ff";
 
-if(d.status==="LIVE")color="#18a558";
-if(d.status==="FINISHED")color="#555";
+
+if(d.status==="LIVE")
+
+color="#18a558";
+
+
+if(d.status==="FINISHED")
+
+color="#555";
+
 
 div.innerHTML=`
 
+<div class="round">
+${safe(d.round || "Quarter Final")}
+</div>
 
 <div class="teams">
-<span>⚽ ${safe(d.team1)}</span>
-<span class="vs">VS</span>
-<span>⚽ ${safe(d.team2)}</span>
+
+<span>
+⚽ ${safe(d.team1)}
+</span>
+
+<span class="vs">
+VS
+</span>
+
+<span>
+⚽ ${safe(d.team2)}
+</span>
+
 </div>
+
 
 <div class="score">
-${Number(d.score1||0)} - ${Number(d.score2||0)}
+
+${Number(d.score1||0)}
+
+-
+
+${Number(d.score2||0)}
+
 </div>
 
-<span class="status" style="background:${color}">
+
+<span
+class="status"
+style="background:${color}">
+
 ${
 d.status==="LIVE"
 ?"🟢 LIVE"
-:d.status==="FINISHED"
+:
+d.status==="FINISHED"
 ?"🏁 FINISHED"
-:"📅 UPCOMING"
+:
+"📅 UPCOMING"
 }
+
 </span>
 
-<div class="matchInfo">
-📅 ${safe(d.date)}<br>
-⏰ ${safe(d.time)}<br>
-📍 ${safe(d.venue)}
 
-${d.winner
-?`<br>🏆 Winner: ${safe(d.winner)}`
-:""}
+<div class="matchInfo">
+
+📅 ${safe(d.date || "")}<br>
+
+⏰ ${safe(d.time || "")}<br>
+
+📍 ${safe(d.venue || "")}
+
+${
+d.winner
+?
+`<br>🏆 Winner: ${safe(d.winner)}`
+:
+""
+}
+
 </div>
+
 `;
+
 
 if(isAdmin()){
 
-const update=document.createElement("button");
+
+const update=
+document.createElement("button");
 
 update.className="update";
-update.textContent="✏️ UPDATE SCORE";
-update.onclick=()=>updateScore(id,d);
 
-const finish=document.createElement("button");
+update.textContent=
+"✏️ UPDATE SCORE";
+
+update.onclick=()=>
+updateScore(id,d);
+
+
+const finish=
+document.createElement("button");
+
 finish.className="finish";
-finish.textContent="🏁 FINISH & SAVE WINNER";
-finish.onclick=()=>finishMatch(id,d);
 
-const del=document.createElement("button");
+finish.textContent=
+"🏁 FINISH & SAVE WINNER";
+
+finish.onclick=()=>
+finishMatch(id,d);
+
+
+const del=
+document.createElement("button");
+
 del.className="delete";
-del.textContent="🗑️ DELETE";
-del.onclick=()=>deleteMatch(id);
 
-div.append(update,finish,del);
+del.textContent=
+"🗑️ DELETE";
+
+del.onclick=()=>
+deleteMatch(id);
+
+
+div.append(
+update,
+finish,
+del
+);
 
 }
+
 
 return div;
 
@@ -521,118 +1080,266 @@ return div;
    UPDATE SCORE
 ========================= */
 
-async function updateScore(id,d){if(!isAdmin()){
-  alert("Admin access required.");
-  return;
-   }
+async function updateScore(id,d){
 
-const s1=prompt("Team 1 score:",d.score1||0);
-if(s1===null)return;
+if(!isAdmin()){
 
-const s2=prompt("Team 2 score:",d.score2||0);
-if(s2===null)return;
+alert("Admin access required.");
 
-if(isNaN(s1)||isNaN(s2)||Number(s1)<0||Number(s2)<0){
-alert("Invalid score.");
 return;
+
 }
 
-await updateDoc(doc(db,"matches",id),{
+
+const s1=
+prompt(
+"Team 1 score:",
+d.score1 || 0
+);
+
+
+if(s1===null)return;
+
+
+const s2=
+prompt(
+"Team 2 score:",
+d.score2 || 0
+);
+
+
+if(s2===null)return;
+
+
+if(
+isNaN(s1) ||
+isNaN(s2) ||
+Number(s1)<0 ||
+Number(s2)<0
+){
+
+alert("Invalid score.");
+
+return;
+
+}
+
+
+await updateDoc(
+
+doc(db,"matches",id),
+
+{
+
 score1:Number(s1),
+
 score2:Number(s2),
+
 status:"LIVE"
-});
+
+}
+
+);
 
 }
 
 
 /* =========================
-   FINISH + WINNER
+   FINISH MATCH
 ========================= */
 
-async function finishMatch(id,d){if(!isAdmin()){
-  alert("Admin access required.");
-  return;
-   }
+async function finishMatch(id,d){
+
+if(!isAdmin()){
+
+alert("Admin access required.");
+
+return;
+
+}
+
 
 let winner="";
 
-if(Number(d.score1)>Number(d.score2))
+
+if(
+Number(d.score1)>
+Number(d.score2)
+){
+
 winner=d.team1;
 
-else if(Number(d.score2)>Number(d.score1))
+}
+
+else if(
+Number(d.score2)>
+Number(d.score1)
+){
+
 winner=d.team2;
+
+}
 
 else{
 
-winner=prompt("Draw match. Enter winner:");
+winner=
+prompt(
+"Draw match. Enter winner:"
+);
+
 if(!winner)return;
 
 }
 
-await updateDoc(doc(db,"matches",id),{
-status:"FINISHED",
-winner:winner
-});
 
-alert("Winner saved: "+winner);
+await updateDoc(
+
+doc(db,"matches",id),
+
+{
+
+status:"FINISHED",
+
+winner:winner
+
+}
+
+);
+
+
+alert(
+"Winner saved: "
++
+winner
+);
 
 }
 
 
 /* =========================
-   DELETE
+   DELETE MATCH
 ========================= */
 
 async function deleteMatch(id){
 
-  if(!isAdmin()){
-    alert("Admin access required.");
-    return;
-  }
+if(!isAdmin()){
 
-  if(!confirm("Delete this match?")) return;
+alert("Admin access required.");
 
-  await deleteDoc(doc(db,"matches",id));
+return;
 
-   }
+}
+
+
+if(
+!confirm(
+"Delete this match?"
+)
+)return;
+
+
+try{
+
+await deleteDoc(
+doc(db,"matches",id)
+);
+
+alert("Match deleted.");
+
+}catch(error){
+
+console.error(error);
+
+alert(
+"Delete failed: "
++
+error.message
+);
+
+}
+
+}
 
 
 /* =========================
-   TEAMS
+   ADD TEAM
 ========================= */
 
 window.addTeam=async()=>{
 
 if(!isAdmin()){
-  alert("Admin login required.");
-  return;
-   }
 
-const name=document.getElementById("newTeam").value.trim();
+alert("Admin login required.");
 
-if(!name)return;
+return;
 
-await addDoc(collection(db,"teams"),{
-name,
+}
+
+
+const name=
+document.getElementById("newTeam")
+.value.trim();
+
+
+if(!name){
+
+alert("Enter team name.");
+
+return;
+
+}
+
+
+await addDoc(
+
+collection(db,"teams"),
+
+{
+
+name:name,
+
 createdAt:Date.now()
-});
 
-document.getElementById("newTeam").value="";
+}
+
+);
+
+
+document.getElementById("newTeam")
+.value="";
 
 };
 
+
+/* =========================
+   TEAM LIST
+========================= */
+
 onSnapshot(
-query(collection(db,"teams"),orderBy("createdAt","asc")),
+
+query(
+collection(db,"teams"),
+orderBy("createdAt","asc")
+),
+
 snap=>{
 
-const box=document.getElementById("teamList");
+const box=
+document.getElementById("teamList");
+
 box.innerHTML="";
+
 
 snap.forEach(x=>{
 
-const p=document.createElement("p");
-p.textContent="⚽ "+x.data().name;
+const p=
+document.createElement("p");
+
+p.textContent=
+"⚽ "
++
+x.data().name;
+
 box.appendChild(p);
 
 });
@@ -642,118 +1349,17 @@ box.appendChild(p);
 
 
 /* =========================
-   DEATH PLAYER
-========================= */
-
-window.addPlayer=async()=>{
-
-if(!isAdmin()){
-  alert("Only admin can add Death Players.");
-  return;
-   }
-
-const team=document.getElementById("playerTeam").value.trim();
-const player=document.getElementById("playerName").value.trim();
-const slot=Number(document.getElementById("slot").value);
-const amount=Number(document.getElementById("amount").value);
-const payment=document.getElementById("payment").value;
-
-if(!team||!player||!amount){
-alert("Fill all Death Player details.");
-return;
-}
-
-
-/* MAX 3 */
-
-const snap=await getDocs(collection(db,"death_players"));
-
-let count=0;
-
-snap.forEach(x=>{
-
-if(String(x.data().team).toLowerCase()
-===team.toLowerCase())count++;
-
-});
-
-if(count>=3){
-alert("Maximum 3 Death Players allowed for this team.");
-return;
-}
-
-
-await addDoc(collection(db,"death_players"),{
-
-team,
-player,
-slot,
-amount,
-paymentMethod:payment,
-paymentStatus:
-payment==="CASH"?"PAID":"ONLINE_PENDING",
-createdAt:Date.now()
-
-});
-
-alert("Death Player saved.");
-
-};
-
-
-/* =========================
-   PUBLIC PLAYERS
-========================= */
-
-onSnapshot(
-query(
-collection(db,"death_players"),
-orderBy("createdAt","asc")
-),
-snap=>{
-
-const box=document.getElementById("players");
-box.innerHTML="";
-
-if(snap.empty){
-box.innerHTML='<div class="empty">No Death Player registered.</div>';
-return;
-}
-
-snap.forEach(x=>{
-
-const d=x.data();
-
-const div=document.createElement("div");
-div.className="player";
-
-div.innerHTML=`
-<b>⚽ ${safe(d.team)}</b><br>
-👤 ${safe(d.player)}<br>
-Payment:
-${
-d.paymentStatus==="PAID"
-?"✅ PAID"
-:"⏳ ONLINE PAYMENT PENDING"
-}
-`;
-
-box.appendChild(div);
-
-});
-
-}
-);
-
-
-/* =========================
-   SECURITY ESCAPE
+   SECURITY
 ========================= */
 
 function safe(text){
 
-const div=document.createElement("div");
-div.textContent=text??"";
+const div=
+document.createElement("div");
+
+div.textContent=
+text ?? "";
+
 return div.innerHTML;
 
 }
