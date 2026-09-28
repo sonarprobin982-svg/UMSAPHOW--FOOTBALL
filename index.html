@@ -267,7 +267,17 @@ appId:"1:727781644747:web:18e66b801816c13368fe4"
 
 const app=initializeApp(firebaseConfig);
 const db=getFirestore(app);
-const auth=getAuth(app);
+const auth=getAuth(app);const ADMIN_UIDS = [
+  "3Xp0q1iMDHTYEOGWyLpypFJtNlh2",
+  "YBn6dMABtsSRFsyeuttF9k7wmxm2",
+  "SatQR0NXliOkcEir3ZfzjUENPpq2",
+  "6v4hXzj2e2fQwATEYx5vd1Tm0cE3"
+];
+
+function isAdmin() {
+  return auth.currentUser &&
+         ADMIN_UIDS.includes(auth.currentUser.uid);
+   }
 
 
 /* =========================
@@ -354,10 +364,10 @@ renderMatches();
 
 window.addMatch=async()=>{
 
-if(!auth.currentUser){
-alert("Only admin can add matches.");
-return;
-}
+if(!isAdmin()){
+  alert("Only admin can add matches.");
+  return;
+   }
 
 const team1=document.getElementById("team1").value.trim();
 const team2=document.getElementById("team2").value.trim();
@@ -503,9 +513,10 @@ ${d.winner
 </div>
 `;
 
-if(auth.currentUser){
+if(isAdmin()){
 
 const update=document.createElement("button");
+
 update.className="update";
 update.textContent="✏️ UPDATE SCORE";
 update.onclick=()=>updateScore(id,d);
@@ -533,7 +544,10 @@ return div;
    UPDATE SCORE
 ========================= */
 
-async function updateScore(id,d){
+async function updateScore(id,d){if(!isAdmin()){
+  alert("Admin access required.");
+  return;
+   }
 
 const s1=prompt("Team 1 score:",d.score1||0);
 if(s1===null)return;
@@ -559,7 +573,10 @@ status:"LIVE"
    FINISH + WINNER
 ========================= */
 
-async function finishMatch(id,d){
+async function finishMatch(id,d){if(!isAdmin()){
+  alert("Admin access required.");
+  return;
+   }
 
 let winner="";
 
@@ -592,11 +609,16 @@ alert("Winner saved: "+winner);
 
 async function deleteMatch(id){
 
-if(!confirm("Delete this match?"))return;
+  if(!isAdmin()){
+    alert("Admin access required.");
+    return;
+  }
 
-await deleteDoc(doc(db,"matches",id));
+  if(!confirm("Delete this match?")) return;
 
-}
+  await deleteDoc(doc(db,"matches",id));
+
+   }
 
 
 /* =========================
@@ -605,10 +627,10 @@ await deleteDoc(doc(db,"matches",id));
 
 window.addTeam=async()=>{
 
-if(!auth.currentUser){
-alert("Admin login required.");
-return;
-}
+if(!isAdmin()){
+  alert("Admin login required.");
+  return;
+   }
 
 const name=document.getElementById("newTeam").value.trim();
 
@@ -648,10 +670,10 @@ box.appendChild(p);
 
 window.addPlayer=async()=>{
 
-if(!auth.currentUser){
-alert("Only admin can add Death Players.");
-return;
-}
+if(!isAdmin()){
+  alert("Only admin can add Death Players.");
+  return;
+   }
 
 const team=document.getElementById("playerTeam").value.trim();
 const player=document.getElementById("playerName").value.trim();
