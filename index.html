@@ -313,8 +313,7 @@ alert("Admin login successful.");
 }catch(error){
 
 console.error(error);
-alert("Login failed. Check Firebase Authentication.");
-
+alert("Login failed: " + error.code + "\n" + error.message);
 }
 
 };
