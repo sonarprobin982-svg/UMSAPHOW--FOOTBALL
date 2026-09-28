@@ -24,7 +24,7 @@ button{width:100%;padding:13px;border:0;border-radius:9px;color:white;font-size:
 .teams{display:flex;justify-content:space-between;align-items:center;gap:8px;font-weight:bold}
 .vs{background:#0875ff;color:white;border-radius:50%;min-width:45px;height:45px;display:flex;align-items:center;justify-content:center}
 .score{font-size:32px;font-weight:bold;color:#0057d9;margin:15px 0}
-.status,.round{display:inline-block;padding:6px 12px;border-radius:20px;color:white;font-size:12px}
+.status{display:inline-block;padding:6px 12px;border-radius:20px;color:white;font-size:12px}
 .round{background:#0057d9;margin-bottom:10px}
 .matchInfo{margin-top:12px;color:#555;line-height:1.7}
 .empty{text-align:center;color:#777;padding:15px}
@@ -359,7 +359,7 @@ if(!isAdmin()){
 
 const team1=document.getElementById("team1").value.trim();
 const team2=document.getElementById("team2").value.trim();
-const round=document.getElementById("round").value;
+
 const status=document.getElementById("status").value;
 const date=document.getElementById("date").value;
 const time=document.getElementById("time").value;
@@ -372,10 +372,7 @@ return;
 
 await addDoc(collection(db,"matches"),{
 
-team1,
-team2,
-round,
-status,
+
 score1:0,
 score2:0,
 winner:"",
@@ -436,16 +433,11 @@ upcoming.appendChild(card);
 u++;
 }
 
-rounds.appendChild(createMatchCard(d,id));
 
-});
 
 if(!l)live.innerHTML='<div class="empty">No live match.</div>';
 if(!u)upcoming.innerHTML='<div class="empty">No upcoming match.</div>';
 if(!f)finished.innerHTML='<div class="empty">No finished match.</div>';
-if(!snapshot.size)rounds.innerHTML='<div class="empty">No matches yet.</div>';
-
-});
 
 }
 
@@ -466,7 +458,6 @@ if(d.status==="FINISHED")color="#555";
 
 div.innerHTML=`
 
-<div class="round">${safe(d.round)}</div>
 
 <div class="teams">
 <span>⚽ ${safe(d.team1)}</span>
