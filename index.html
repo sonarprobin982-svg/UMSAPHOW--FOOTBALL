@@ -80,11 +80,6 @@ footer{background:#002b70;color:white;text-align:center;padding:22px;margin-top:
 <div id="finished"><div class="empty">No finished match.</div></div>
 </div>
 
-<!-- ROUNDS -->
-<div class="card">
-<h2 class="title">🏆 TOURNAMENT ROUNDS</h2>
-<div id="rounds"><div class="empty">Loading...</div></div>
-</div>
 
 <!-- DEATH PLAYERS -->
 <div class="card">
@@ -122,13 +117,7 @@ footer{background:#002b70;color:white;text-align:center;padding:22px;margin-top:
 <input id="team1" placeholder="Team 1">
 <input id="team2" placeholder="Team 2">
 
-<select id="round">
-<option>Round 1</option>
-<option>Round 2</option>
-<option>Quarter Final</option>
-<option>Semi Final</option>
-<option>Final</option>
-</select>
+
 
 <select id="status">
 <option value="UPCOMING">Upcoming</option>
@@ -422,12 +411,10 @@ unsubscribeMatches=onSnapshot(q,snapshot=>{
 const live=document.getElementById("live");
 const upcoming=document.getElementById("upcoming");
 const finished=document.getElementById("finished");
-const rounds=document.getElementById("rounds");
 
 live.innerHTML="";
 upcoming.innerHTML="";
 finished.innerHTML="";
-rounds.innerHTML="";
 
 let l=0,u=0,f=0;
 
